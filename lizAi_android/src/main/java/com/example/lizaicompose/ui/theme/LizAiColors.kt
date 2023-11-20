@@ -13,10 +13,8 @@ val PurpleGrey40 = Color(0xFF625b71)
 val Pink40 = Color(0xFF7D5260)
 
 @Immutable
-data class LizAiColors(val contentColor: Color)
+data class LizAiColors(val contentColor: Color = Purple40)
 
-val LocalLizAiColors = staticCompositionLocalOf {
-    LizAiColors(
-        contentColor = Purple40,
-    )
+internal val LocalLizAiColors = staticCompositionLocalOf {
+    LizAiColors()
 }
