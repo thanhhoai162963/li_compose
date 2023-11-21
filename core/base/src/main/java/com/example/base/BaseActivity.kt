@@ -38,7 +38,7 @@ abstract class BaseActivity : ComponentActivity() {
         }
     }
 
-    protected fun Modifier.SingelClick(onSingleClick: () -> Unit) {
+    protected fun Modifier.singleClick(onSingleClick: () -> Unit) {
         val currentClickTime = SystemClock.uptimeMillis()
         val elapsedTime = currentClickTime - mLastClickTime
         mLastClickTime = currentClickTime

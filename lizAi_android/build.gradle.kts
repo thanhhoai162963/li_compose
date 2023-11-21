@@ -1,9 +1,6 @@
-
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("com.google.dagger.hilt.android")
-    kotlin("kapt")
 }
 
 android {
@@ -51,9 +48,7 @@ android {
         }
     }
 }
-kapt {
-    correctErrorTypes = true
-}
+
 dependencies {
 
     implementation("androidx.core:core-ktx:1.12.0")
@@ -73,7 +68,8 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
-    //dagger-hilt
-    implementation("com.google.dagger:hilt-android:2.48.1")
-    kapt("com.google.dagger:hilt-android-compiler:2.48.1")
+    //data store
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
 }
+
+
