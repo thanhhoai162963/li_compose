@@ -19,10 +19,10 @@ class LizAiDataStore {
         var instance: LizAiDataStore = LizAiDataStore()
     }
 
-    fun getEncryptedDeviceId(): Flow<String> {
+    suspend fun getEncryptedDeviceId(): String {
         return LizAiApplication.instance.dataStoreLizAi.data.map {
             it[KeyDataStore.SORT_ORDER].toString()
-        }
+        }.first()
     }
 
     suspend fun setEncryptedDeviceId(deviceId: String?) {

@@ -5,20 +5,20 @@ import com.example.lizaicompose.datastore.LizAiDataStore
 import com.google.gson.Gson
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.withContext
 import okhttp3.Interceptor
 
 class Auth : Interceptor {
     override fun intercept(chain: Interceptor.Chain): okhttp3.Response {
 
-/*
         var request = chain.request().newBuilder()
-            .header(Header.deviceId, LizAiDataStore.instance.getEncryptedDeviceId().collect())
+            .header(Header.deviceId, LizAiDataStore.instance.getEncryptedDeviceId())
             .header(
                 Gson.keyAuthorization,
                 if (LizApp.instance.getToken()
                         ?.getAuthorization() != null
                 ) LizApp.instance.getToken()?.getAuthorization() else ""
             ).build()
-        return chain.proceed(request)*/
+        return chain.proceed(request)
     }
 }
